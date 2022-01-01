@@ -10865,6 +10865,7 @@ button {
   line-height: 95px;
   font-weight: 700;
   padding: 24px 30px;
+  border: 3px solid #fff;
   position: relative;
   width: fit-content;
   text-transform: uppercase;
@@ -10889,8 +10890,6 @@ button {
   position: absolute;
   top: 35%;
   left: 13px;
-  animation: topLeft 1s infinite;
-  animation-iteration-count: 1;
 }
 .banner-highlight span.top-right {
   top: 0;
@@ -10904,8 +10903,6 @@ button {
   position: absolute;
   top: 13px;
   left: 34%;
-  animation: topRight 1s infinite;
-  animation-iteration-count: 1;
 }
 .banner-highlight span.bottom-left {
   bottom: 0;
@@ -10919,8 +10916,6 @@ button {
   position: absolute;
   bottom: 14px;
   left: 34%;
-  animation: bottomLeft 1s infinite;
-  animation-iteration-count: 1;
 }
 .banner-highlight span.bottom-right {
   bottom: 0;
@@ -10934,8 +10929,6 @@ button {
   position: absolute;
   top: 35%;
   right: 14px;
-  animation: bottomRight 1s infinite;
-  animation-iteration-count: 1;
 }
 .banner-content {
   font-size: 32px;
