@@ -31,7 +31,6 @@
         position: relative;
         width: fit-content;
         text-transform: uppercase;
-        overflow-x: hidden;
 
         span {
             width: 16px;
@@ -42,13 +41,13 @@
 
             &.top {
                 &-left {
-                    top: 0;
-                    left: 0;
+                    top: -6%;
+                    left: -1.3%;
 
                     &::after {
                         content: "";
-                        width: 7.7em;
-                        height: 3px;
+                        // width: 7.7em;
+                        // height: 3px;
                         background: #fff;
                         position: absolute;
                         top: 35%;
@@ -59,13 +58,13 @@
                 }
 
                 &-right {
-                    top: 0;
-                    right: 0;
+                    top: -6%;
+                    right: -1.3%;
 
                     &::after {
                         content: "";
-                        width: 3px;
-                        height: 1.4em;
+                        // width: 3px;
+                        // height: 1.4em;
                         background: #fff;
                         position: absolute;
                         top: 13px;
@@ -78,13 +77,13 @@
 
             &.bottom {
                 &-left {
-                    bottom: 0;
-                    left: 0;
+                    bottom: -6%;
+                    left: -1.3%;
 
                     &::after {
                         content: "";
-                        height: 1.3em;
-                        width: 3px;
+                        // height: 1.3em;
+                        // width: 3px;
                         background: #fff;
                         position: absolute;
                         bottom: 14px;
@@ -95,13 +94,13 @@
                 }
 
                 &-right {
-                    bottom: 0;
-                    right: 0;
+                    bottom: -6%;
+                    right: -1.3%;
 
                     &::after {
                         content: "";
-                        width: 7.6em;
-                        height: 3px;
+                        // width: 7.6em;
+                        // height: 3px;
                         background: #fff;
                         position: absolute;
                         top: 35%;
