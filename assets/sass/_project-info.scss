@@ -1,0 +1,320 @@
+.form-wrap {
+    padding: 220px 420px 50px;
+}
+
+.accordion {
+    &-item {
+        padding: 30px 34px;
+        background: $white;
+        border-radius: 20px;
+        margin-bottom: 19px;
+        border: none;
+
+        &:first-of-type,
+        &:last-of-type {
+            border-radius: 20px;
+        }
+    }
+
+    &-button {
+        font-size: 31px;
+        line-height: 39px;
+        font-weight: 600;
+        padding: 0;
+
+        .step-count {
+            padding: 13px 35px;
+            background: rgba($color: $primary, $alpha: 0.05);
+            border-radius: 10px;
+            margin-right: 38px;
+            font-size: 26px;
+            line-height: 29px;
+            font-weight: 400;
+            color: $primary;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &::after {
+            background-image: url(../svg/arrow.svg);
+            background-size: contain;
+            height: 12px;
+        }
+
+        &:not(.collapsed) {
+            background-color: transparent;
+            box-shadow: none;
+
+            &::after {
+                background-image: url(../svg/arrow.svg);
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}
+
+.form {
+    &-label {
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 600;
+        color: $gray-300;
+        margin-bottom: 13px;
+
+        .small-text {
+            font-size: 12px;
+            line-height: 15px;
+            font-weight: 300;
+            margin-left: 15px;
+        }
+    }
+
+    &-control {
+        padding: 19px 23px;
+        border-color: $gray-200;
+        border-radius: 5px;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 400;
+
+        &::placeholder {
+            color: $gray-400;
+        }
+
+        &:focus {
+            box-shadow: none;
+            border-color: $dark;
+        }
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+.custom-tooltip {
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+// upload image box
+.box {
+    display: block;
+    width: 100%;
+    height: 275px;
+    margin: 0px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    overflow: hidden;
+    border: 1px solid $gray-100;
+}
+
+.upload-options {
+    position: relative;
+    height: 65px;
+    background-color: $primary;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    transition: background-color ease-in-out 150ms;
+
+    &:hover {
+        background-color: lighten($primary, 10%);
+    }
+
+    & input {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+    & label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        font-weight: 400;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+        overflow: hidden;
+
+        &::after {
+            content: '+';
+            position: absolute;
+            font-size: 2.5rem;
+            color: rgba(230, 230, 230, 1);
+            top: calc(50% - 2.5rem);
+            left: calc(50% - 1.25rem);
+            z-index: 0;
+        }
+
+        & span {
+            display: inline-block;
+            width: 50%;
+            height: 100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            vertical-align: middle;
+            text-align: center;
+
+            &:hover i.material-icons {
+                color: lightgray;
+            }
+        }
+    }
+}
+
+
+.js--image-preview {
+    height: 225px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-image: url('../svg/upload.svg');
+    background-color: white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::after {
+        content: "";
+        font-family: 'Material Icons';
+        position: relative;
+        font-size: 4.5em;
+        color: rgba(230, 230, 230, 1);
+        top: calc(50% - 3rem);
+        left: calc(50% - 2.25rem);
+        z-index: 0;
+    }
+
+    &.js--no-default::after {
+        display: none;
+    }
+
+    &:nth-child(2) {
+        background-image: url('http://bastianandre.at/giphy.gif');
+    }
+}
+
+i.material-icons {
+    transition: color 100ms ease-in-out;
+    font-size: 2.25em;
+    line-height: 55px;
+    color: white;
+    display: block;
+}
+
+.drop {
+    display: block;
+    position: absolute;
+    background: transparentize($primary, .8);
+    border-radius: 100%;
+    transform: scale(0);
+}
+
+.animate {
+    animation: ripple 0.4s linear;
+}
+
+.addmore {
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: $primary;
+    border-radius: 5px;
+
+    &.submit {
+        width: 80%;
+        padding: 19px 41px;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 600;
+    }
+}
+
+// switch toggle
+.switcher {
+    display: inline-block;
+    height: 30px;
+    margin-top: 3px;
+    padding: 3px;
+    background: #F4F5FF;
+    border-radius: 15px;
+    width: 90px;
+    border-radius: 30px;
+    border: none;
+    position: relative;
+}
+
+.switcher__input {
+    display: none;
+}
+
+.switcher__label {
+    float: left;
+    width: 50%;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 700;
+    color: $primary;
+    text-align: center;
+    cursor: pointer;
+    position: inherit;
+    z-index: 10;
+    transition: color 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    will-change: transform;
+    top: 20%;
+    left: -2%;
+
+    &:first-of-type {
+        left: 4%;
+    }
+}
+
+.switcher__toggle {
+    position: absolute;
+    padding: 5px 10px;
+    float: left;
+    width: 50%;
+    height: 24px;
+    font-size: 12px;
+    line-height: 15px;
+    cursor: pointer;
+    background-color: $primary;
+    border-radius: 30px;
+    left: 5px;
+    top: 3px;
+    transition: left 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+    will-change: transform;
+}
+
+.switcher__input:checked {
+    &+.switcher__label {
+        color: #fff;
+    }
+}
+
+.switcher__input--yang:checked~.switcher__toggle {
+    left: 40px;
+}
+
+.toggle-label {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    margin-left: 20px;
+}

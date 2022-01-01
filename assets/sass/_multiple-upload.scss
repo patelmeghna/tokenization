@@ -1,0 +1,94 @@
+.custom-file {
+    position: relative;
+    font-family: arial;
+    overflow: hidden;
+    width: 100%;
+    background: rgba($color: $gray-200, $alpha: 0.16);
+    border-radius: 16px;
+    padding: 24px 80px;
+
+    &-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .upload-text {
+            font-size: 10px;
+            line-height: 13px;
+            font-weight: 600;
+            color: $gray-500;
+            margin: 10px 0 19px;
+        }
+
+        .browse-btn {
+            padding: 8px 29px;
+            background: $white;
+            border-radius: 5px;
+            font-size: 10px;
+            line-height: 12px;
+            font-weight: 600;
+            color: $primary;
+        }
+    }
+}
+
+.custom-file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 100;
+}
+
+.custom-file img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+ul.file-list {
+    font-family: arial;
+    list-style: none;
+    padding: 0;
+}
+
+ul.file-list li {
+    padding: 5px;
+    list-style-type: decimal;
+    color: $gray-300;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 300;
+}
+
+.remove-list {
+    cursor: pointer;
+    margin-left: 10px;
+    color: $danger;
+    float: right;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $danger;
+    border-radius: 50%;
+    transition: .3s ease-in-out;
+
+    &:hover {
+        background: $danger;
+        color: $white;
+    }
+}
+
+.small-text {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 300;
+    color: $gray-300;
+    margin-top: 20px;
+}

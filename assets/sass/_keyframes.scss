@@ -1,0 +1,47 @@
+@keyframes topLeft {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 7.7em;
+    }
+}
+
+@keyframes topRight {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 1.4em;
+    }
+}
+
+@keyframes bottomLeft {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 1.3em;
+    }
+}
+
+@keyframes bottomRight {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 7.6em;
+    }
+}
+
+
+@keyframes ripple {
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
