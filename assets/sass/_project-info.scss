@@ -1,5 +1,14 @@
-.form-wrap {
-    padding: 220px 420px 50px;
+.form {
+    &-wrap {
+        padding: 70px 420px;
+    }
+
+    &-heading {
+        font-size: 31px;
+        line-height: 39px;
+        font-weight: 600;
+        margin-bottom: 40px;
+    }
 }
 
 .accordion {
@@ -49,7 +58,7 @@
 
             &::after {
                 background-image: url(../svg/arrow.svg);
-                transform: rotate(-90deg);
+                transform: rotate(90deg);
             }
         }
     }

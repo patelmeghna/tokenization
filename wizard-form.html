@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokenization</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/svg/favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="./assets/svg/logo.svg" alt="logo" title="logo">
+        </div>
+
+        <div class="menu-item">
+            <a href="/" class="menu-link active">Tokenize an Asset</a>
+            <a href="/" class="menu-link">Marketplace</a>
+            <a href="/" class="menu-link">Blog</a>
+            <a href="/" class="menu-link">About Us</a>
+        </div>
+
+        <div class="account">
+            <div class="user-account">
+                <a href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="29.998" height="29.998" viewBox="0 0 29.998 29.998">
+                        <g id="vuesax_broken_frame" data-name="vuesax/broken/frame" transform="translate(-108 -252)">
+                            <g id="frame" transform="translate(108 252)">
+                                <path id="Vector"
+                                    d="M10.145,2.45a5.538,5.538,0,0,1-4.4,8.637,2.272,2.272,0,0,0-.412,0,5.51,5.51,0,0,1-5.3-4.9A5.646,5.646,0,0,1,5.533,0"
+                                    transform="translate(9.453 2.5)" fill="none" stroke="#ff5a3c" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="1.5" />
+                                <path id="Vector-2" data-name="Vector"
+                                    d="M2.269,1.715C-.756,3.74-.756,7.04,2.269,9.052a12.207,12.207,0,0,0,12.511,0c3.025-2.025,3.025-5.325,0-7.337A12.264,12.264,0,0,0,2.269,1.715Z"
+                                    transform="translate(6.468 16.483)" fill="none" stroke="#ff5a3c"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                                <path id="Vector-3" data-name="Vector" d="M0,0H30V30H0Z" fill="none" opacity="0" />
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-wrap">
+        <div class="wizard-tab">
+            <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="profile-detail-tab" data-bs-toggle="tab"
+                    data-bs-target="#profile-detail" type="button" role="tab" aria-controls="profile-detail"
+                    aria-selected="true">Step 1</button>
+                <button class="nav-link" id="asset-info-tab" data-bs-toggle="tab" data-bs-target="#asset-info"
+                    type="button" role="tab" aria-controls="asset-info" aria-selected="false">Step 2</button>
+                <button class="nav-link" id="offering-terms-tab" data-bs-toggle="tab" data-bs-target="#offering-terms"
+                    type="button" role="tab" aria-controls="offering-terms" aria-selected="false">Step 3</button>
+                <button class="nav-link" id="company-tab" data-bs-toggle="tab" data-bs-target="#company" type="button"
+                    role="tab" aria-controls="company" aria-selected="false">Step 4</button>
+                <button class="nav-link" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents"
+                    type="button" role="tab" aria-controls="documents" aria-selected="false">Step 5</button>
+            </div>
+        </div>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="profile-detail" role="tabpanel"
+                aria-labelledby="profile-detail-tab">
+                <div class="tab-form">
+                    <h2 class="form-heading">Profile Details</h2>
+                    <form>
+                        <div class="row gy-4">
+                            <div class="col-md-5">
+                                <label class="form-label">Project Name</label>
+                                <input type="text" name="project-name" id="project-name" placeholder="Name Here"
+                                    class="form-control">
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="form-label">Location</label>
+                                <input type="text" name="location" id="location" placeholder="Enter Location"
+                                    class="form-control">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label">Describe the Project <span class="small-text">(Max 200
+                                        Characters)</span></label>
+                                <textarea name="project-detail" id="project-detail" cols="" rows="4"
+                                    class="form-control" placeholder="Type project details here"></textarea>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Token Name
+                                    <button type="button" class="custom-tooltip" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="Tooltip text here">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9">
+                                            <g id="Group_13725" data-name="Group 13725" transform="translate(-125 -6)">
+                                                <g id="Ellipse_433" data-name="Ellipse 433" transform="translate(125 6)"
+                                                    fill="#fff" stroke="#c2c2c2" stroke-width="0.8">
+                                                    <circle cx="4.5" cy="4.5" r="4.5" stroke="none" />
+                                                    <circle cx="4.5" cy="4.5" r="4.1" fill="none" />
+                                                </g>
+                                                <path id="Path_2537" data-name="Path 2537"
+                                                    d="M1.321-10.037a.394.394,0,0,0,.411-.4.382.382,0,0,0-.411-.37.391.391,0,0,0-.411.385A.391.391,0,0,0,1.321-10.037ZM1-6.842H1.64V-9.585H1Z"
+                                                    transform="translate(128.186 19.332)" fill="#c2c2c2" />
+                                            </g>
+                                        </svg>
+                                    </button>
+                                </label>
+
+                                <input type="text" class="form-control" placeholder="Name Here">
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Select date for token launch</label>
+                                <input type="date" class="form-control">
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Token Ticker Symbol
+                                    <button type="button" class="custom-tooltip" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="Tooltip text here">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9">
+                                            <g id="Group_13725" data-name="Group 13725" transform="translate(-125 -6)">
+                                                <g id="Ellipse_433" data-name="Ellipse 433" transform="translate(125 6)"
+                                                    fill="#fff" stroke="#c2c2c2" stroke-width="0.8">
+                                                    <circle cx="4.5" cy="4.5" r="4.5" stroke="none" />
+                                                    <circle cx="4.5" cy="4.5" r="4.1" fill="none" />
+                                                </g>
+                                                <path id="Path_2537" data-name="Path 2537"
+                                                    d="M1.321-10.037a.394.394,0,0,0,.411-.4.382.382,0,0,0-.411-.37.391.391,0,0,0-.411.385A.391.391,0,0,0,1.321-10.037ZM1-6.842H1.64V-9.585H1Z"
+                                                    transform="translate(128.186 19.332)" fill="#c2c2c2" />
+                                            </g>
+                                        </svg>
+                                    </button>
+                                </label>
+
+                                <input type="text" class="form-control" placeholder="Name Here">
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <label class="form-label">Property Images</label>
+                                        <div class="row gy-4">
+                                            <div class="col-md-6 col-lg-4">
+                                                <div class="box">
+                                                    <div class="js--image-preview"></div>
+                                                    <div class="upload-options">
+                                                        <label>
+                                                            <input type="file" class="image-upload" accept="image/*" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button type="button" class="addmore" id="duplicate">Add More +</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-xl-4">
+                                <button class="btn btn-primary submit">Save & Continue</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="asset-info" role="tabpanel" aria-labelledby="asset-info-tab">
+                <div class="tab-form">
+                    <h2 class="form-heading">Asset Info</h2>
+                    <form>
+                        <div class="row gy-4">
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">What assets help by the entity will be
+                                    collateralize?</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="asset" id="land">
+                                        <label class="form-check-label" for="land">
+                                            Land
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="asset" id="apartment">
+                                        <label class="form-check-label" for="apartment">
+                                            Apartment
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="asset" id="bunglow">
+                                        <label class="form-check-label" for="bunglow">
+                                            Bunglow
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Does company currently own the assets?</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="own" id="Yes">
+                                        <label class="form-check-label" for="Yes">
+                                            Yes
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="own" id="No">
+                                        <label class="form-check-label" for="No">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Is it single asset or portfolio?</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="portfolio" id="Single">
+                                        <label class="form-check-label" for="Single">
+                                            Single
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="portfolio" id="Portfolio">
+                                        <label class="form-check-label" for="Portfolio">
+                                            Portfolio
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Is capital/equity already investment in the
+                                    assets?</label>
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="investment"
+                                                id="invest-yes">
+                                            <label class="form-check-label" for="invest-yes">
+                                                Yes
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="investment"
+                                                id="invest-no">
+                                            <label class="form-check-label" for="invest-no">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">₹</span>
+                                            <input type="number" class="form-control" placeholder="00" aria-label="00"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Select asset category</label>
+                                <select class="form-select w-80" aria-label="Default select example">
+                                    <option selected>Select option</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Is there debt on the assets?</label>
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="debt" id="debt-yes">
+                                            <label class="form-check-label" for="debt-yes">
+                                                Yes
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="debt" id="debt-no">
+                                            <label class="form-check-label" for="debt-no">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">₹</span>
+                                            <input type="number" class="form-control" placeholder="00" aria-label="00"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">What is the assets most recent valuation?
+                                    (INR)</label>
+                                <input type="text" class="form-control w-80"
+                                    placeholder="Type None if valuation is done">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Who is the lender?</label>
+                                <input type="text" class="form-control w-80" placeholder="Enter Name">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Are there any special feature on this
+                                    assets</label>
+                                <input type="text" class="form-control w-80"
+                                    placeholder="eg: Green Building, Tax benefits, etc.">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">How will profits be distributed?</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="distribution" id="final">
+                                        <label class="form-check-label" for="final">
+                                            Final liquidity event
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="distribution" id="regular">
+                                        <label class="form-check-label" for="regular">
+                                            Regular Distribution
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-xl-4">
+                                <button class="btn btn-primary submit">Save & Continue</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="offering-terms" role="tabpanel" aria-labelledby="offering-terms-tab">
+                <div class="tab-form">
+                    <h2 class="form-heading">Offering Terms</h2>
+                    <form>
+                        <div class="row gy-4 gx-5">
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Total raise amount</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">₹</span>
+                                    <input type="number" name="" id="" class="form-control" placeholder="00">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">How much is already invested in the
+                                    offering?</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">₹</span>
+                                    <input type="number" name="" id="" class="form-control" placeholder="00">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Maximum raise amount</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">₹</span>
+                                    <input type="number" name="" id="" class="form-control" placeholder="00">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">What type of offering?</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Select option</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Expected use of funds</label>
+                                <textarea name="" id="" cols="" rows="4" class="form-control"
+                                    placeholder="Type project details here"></textarea>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Are you selling funding in debt or equity?</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="equity-fund" id="equity">
+                                        <label class="form-check-label" for="equity">
+                                            Equity
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="equity-fund" id="Debt">
+                                        <label class="form-check-label" for="Debt">
+                                            Debt
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="equity-fund" id="Both">
+                                        <label class="form-check-label" for="Both">
+                                            Both
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-xl-5">
+                                <button class="btn btn-primary submit">Save & Continue</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="company" role="tabpanel" aria-labelledby="company-tab">
+                <div class="tab-form">
+                    <h2 class="form-heading">Company</h2>
+                    <form>
+                        <div class="row gy-4 gx-5">
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Entity Name</label>
+                                <input type="text" name="" id="" class="form-control" placeholder="Enter name">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Address 1</label>
+                                <input type="text" name="" id="" class="form-control" placeholder="Enter address here">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Company DIR CIN number</label>
+                                <input type="number" name="" id="" class="form-control" placeholder="32459045">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Address 2</label>
+                                <input type="text" name="" id="" class="form-control" placeholder="Enter address here">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Website</label>
+                                <input type="url" name="" id="" class="form-control" placeholder="www.yourcompany.com">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Landmark</label>
+                                <input type="text" name="" id="" class="form-control" placeholder="Enter landmark here">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">Entity type</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="entity-type" id="pvt">
+                                        <label class="form-check-label" for="pvt">
+                                            Pvt.Ltd.
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="entity-type" id="llp">
+                                        <label class="form-check-label" for="llp">
+                                            LLT
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="entity-type"
+                                            id="Partnership">
+                                        <label class="form-check-label" for="Partnership">
+                                            Partnership
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="entity-type" id="Other">
+                                        <label class="form-check-label" for="Other">
+                                            Other
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-6 col-lg-12 col-md-6">
+                                        <label for="" class="form-label">Zipcode</label>
+                                        <input type="number" name="" id="" placeholder="000000" class="form-control">
+                                    </div>
+
+                                    <div class="col-6 col-lg-12 col-md-6">
+                                        <label for="" class="form-label">City</label>
+                                        <input type="text" name="" id="" placeholder="City Name" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">What type of entity are you raising / tokenizing
+                                    for?</label>
+                                <div class="row gy-2">
+                                    <div class="col-6">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                value="option1">
+                                            <label class="form-check-label" for="inlineCheckbox1">Property
+                                                Company</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                                value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox2">Investment
+                                                Company</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                                value="option3">
+                                            <label class="form-check-label" for="inlineCheckbox3">Operation
+                                                Company</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-6 col-lg-12 col-md-6">
+                                        <label for="" class="form-label">State</label>
+                                        <input type="text" name="" id="" placeholder="State Name" class="form-control">
+                                    </div>
+
+                                    <div class="col-6 col-lg-12 col-md-6">
+                                        <label for="" class="form-label">Country</label>
+                                        <input type="text" name="" id="" placeholder="Country Name"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="" class="form-label">Your role in relation to assets?</label>
+                                <div class="row gy-2">
+                                    <div class="col-md-4">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="owner" value="option1">
+                                            <label class="form-check-label" for="owner">Owner</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="Broker-Buyer"
+                                                value="option2">
+                                            <label class="form-check-label" for="Broker-Buyer">Broker /
+                                                Buyer</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="Asset-Manager"
+                                                value="option3">
+                                            <label class="form-check-label" for="Asset-Manager">Asset
+                                                Manager</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="Contractor"
+                                                value="option1">
+                                            <label class="form-check-label" for="Contractor">Contractor</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="Developer"
+                                                value="option2">
+                                            <label class="form-check-label" for="Developer">Developer</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="Builder"
+                                                value="option3">
+                                            <label class="form-check-label" for="Builder">Builder</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-xl-5">
+                                <button class="btn btn-primary submit">Save & Continue</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
+                <div class="tab-form">
+                    <h2 class="form-heading">Documents</h2>
+                    <form>
+                        <div class="row gy-4 gx-5">
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">How much money is already raised? <span
+                                        class="small-text">(Type 0 if answer is none)</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">₹</span>
+                                    <input type="number" name="" id="" class="form-control" placeholder="00">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="" class="form-label">How much interested investors do you have?</label>
+                                <input type="number" name="" id="" class="form-control" placeholder="00">
+                            </div>
+
+                            <div class="col-md-12 d-grid">
+                                <label for="" class="form-label">Required Documentation? <button type="button"
+                                        class="custom-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        title="Tooltip text here">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9">
+                                            <g id="Group_13725" data-name="Group 13725" transform="translate(-125 -6)">
+                                                <g id="Ellipse_433" data-name="Ellipse 433" transform="translate(125 6)"
+                                                    fill="#fff" stroke="#c2c2c2" stroke-width="0.8">
+                                                    <circle cx="4.5" cy="4.5" r="4.5" stroke="none" />
+                                                    <circle cx="4.5" cy="4.5" r="4.1" fill="none" />
+                                                </g>
+                                                <path id="Path_2537" data-name="Path 2537"
+                                                    d="M1.321-10.037a.394.394,0,0,0,.411-.4.382.382,0,0,0-.411-.37.391.391,0,0,0-.411.385A.391.391,0,0,0,1.321-10.037ZM1-6.842H1.64V-9.585H1Z"
+                                                    transform="translate(128.186 19.332)" fill="#c2c2c2" />
+                                            </g>
+                                        </svg>
+                                    </button>
+                                    <span class="small-text">(If YES upload documentation below)</span>
+                                </label>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="switcher">
+                                        <input type="radio" name="tokenization" value="" id="tokenization-yes"
+                                            class="switcher__input switcher__input--yin" checked="">
+                                        <label for="tokenization-yes" class="switcher__label">Yes</label>
+
+                                        <input type="radio" name="tokenization" value="" id="tokenization-no"
+                                            class="switcher__input switcher__input--yang">
+                                        <label for="tokenization-no" class="switcher__label">No</label>
+
+                                        <span class="switcher__toggle"></span>
+                                    </div>
+                                    <div class="toggle-label">Do you have any entity setup for tokenization?</div>
+                                </div>
+
+                                <div class="d-flex align-items-center mt-3">
+                                    <div class="switcher">
+                                        <input type="radio" name="agreement" value="" id="agreement-yes"
+                                            class="switcher__input switcher__input--yin" checked="">
+                                        <label for="agreement-yes" class="switcher__label">Yes</label>
+
+                                        <input type="radio" name="agreement" value="" id="agreement-no"
+                                            class="switcher__input switcher__input--yang">
+                                        <label for="agreement-no" class="switcher__label">No</label>
+
+                                        <span class="switcher__toggle"></span>
+                                    </div>
+                                    <div class="toggle-label">Do you have agreement between a company and a private
+                                        investor to sell specific number of shares?</div>
+                                </div>
+
+                                <div class="d-flex align-items-center mt-3">
+                                    <div class="switcher">
+                                        <input type="radio" name="investment" value="" id="investment-yes"
+                                            class="switcher__input switcher__input--yin" checked="">
+                                        <label for="investment-yes" class="switcher__label">Yes</label>
+
+                                        <input type="radio" name="investment" value="" id="investment-no"
+                                            class="switcher__input switcher__input--yang">
+                                        <label for="investment-no" class="switcher__label">No</label>
+
+                                        <span class="switcher__toggle"></span>
+                                    </div>
+                                    <div class="toggle-label">Do you have an Investment Agreement?</div>
+                                </div>
+
+                                <div class="d-flex align-items-center mt-3">
+                                    <div class="switcher">
+                                        <input type="radio" name="financial-model" value="" id="financial-yes"
+                                            class="switcher__input switcher__input--yin" checked="">
+                                        <label for="financial-yes" class="switcher__label">Yes</label>
+
+                                        <input type="radio" name="financial-model" value="" id="financial-no"
+                                            class="switcher__input switcher__input--yang">
+                                        <label for="financial-no" class="switcher__label">No</label>
+
+                                        <span class="switcher__toggle"></span>
+                                    </div>
+                                    <div class="toggle-label">Do you have a financial model?</div>
+                                </div>
+
+                                <div class="d-flex align-items-center mt-3">
+                                    <div class="switcher">
+                                        <input type="radio" name="investor-deck" value="" id="deck-yes"
+                                            class="switcher__input switcher__input--yin" checked="">
+                                        <label for="deck-yes" class="switcher__label">Yes</label>
+
+                                        <input type="radio" name="investor-deck" value="" id="deck-no"
+                                            class="switcher__input switcher__input--yang">
+                                        <label for="deck-no" class="switcher__label">No</label>
+
+                                        <span class="switcher__toggle"></span>
+                                    </div>
+                                    <div class="toggle-label">Do you have a private deck for investor?</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="" class="form-label">Please upload all relevant files below</label>
+                                <div class="row gx-4">
+                                    <div class="col-lg-5 col-12">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="file" multiple
+                                                onchange="javascript:updateList()">
+                                            <label class="custom-file-label" for="file">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="50.619" height="32.866"
+                                                    viewBox="0 0 50.619 32.866">
+                                                    <path id="cloud-computing"
+                                                        d="M38.662,8.674a16.436,16.436,0,0,0-30.637,4.7,9.827,9.827,0,0,0,1.8,19.487h14V20.426l-3.142,3.142a1.483,1.483,0,0,1-2.1-2.1L24.26,15.8a1.482,1.482,0,0,1,2.1,0l5.674,5.674a1.483,1.483,0,1,1-2.1,2.1l-3.142-3.142v12.44h11.73a12.1,12.1,0,0,0,.14-24.192Zm0,0"
+                                                        transform="translate(0.001 0)" fill="#253cff" />
+                                                </svg>
+                                                <p class="upload-text">Drag & Drop your files here</p>
+                                                <p class="browse-btn">Browse Files</p>
+                                            </label>
+                                        </div>
+
+                                        <p class="small-text">Based on your answers above, please upload following
+                                            files</p>
+                                    </div>
+
+                                    <div class="col-lg-7 col-12">
+                                        <ul id="fileList" class="file-list"></ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-5 col-lg-6">
+                                <button class="btn btn-primary submit">Save & Continue</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    <script>
+        var triggerTabList = [].slice.call(document.querySelectorAll('#myTab a'))
+        triggerTabList.forEach(function (triggerEl) {
+            var tabTrigger = new bootstrap.Tab(triggerEl)
+
+            triggerEl.addEventListener('click', function (event) {
+                event.preventDefault()
+                tabTrigger.show()
+            })
+        })
+    </script>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

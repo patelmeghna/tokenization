@@ -1,0 +1,49 @@
+.liquidity {
+    padding: 144px 142px;
+    background: $white;
+}
+
+.img-wrap {
+    width: 800px;
+    height: 700px;
+    background: $gray-400;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.points-wrap {
+    margin-top: 50px;
+
+    p {
+        span {
+            padding: 14px;
+            background: rgba($color: $primary, $alpha: 0.05);
+            border-radius: 10px;
+            text-align: center;
+            margin-right: 25px;
+
+            svg {
+                position: relative;
+                left: 4px;
+            }
+        }
+
+        font-size: 22px;
+        line-height: 50px;
+        color: $gray-600;
+        font-weight: 200;
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.text-wrap {
+    width: 90%;
+    float: right;
+}

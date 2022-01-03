@@ -1,0 +1,57 @@
+.tab {
+    &-pane {
+        .tab-form {
+            background: $white;
+            border-radius: 20px;
+            padding: 37px 34px;
+        }
+
+        &:first-of-type {
+            .tab-form {
+                border-radius: 0 20px 20px 20px;
+            }
+        }
+    }
+}
+
+.nav {
+    padding: 0;
+    background: transparent;
+
+    &-tabs {
+        border: none;
+    }
+
+    &-link {
+        padding: 13px 34px;
+        font-size: 26px;
+        line-height: 29px;
+        color: $primary;
+        margin-right: 40px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.active {
+            background: $white;
+            border-radius: 10px 10px 0 0;
+            border: none;
+            color: $primary;
+        }
+
+        &:hover,
+        &:focus {
+            border: none;
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    color: $primary;
+}

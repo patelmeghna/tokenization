@@ -1,0 +1,141 @@
+.top-banner {
+    padding: 106px 140px;
+}
+
+.sub-title {
+    font-size: 22px;
+    line-height: 32px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: $primary;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+    color: $dark;
+
+    & &-highlight {
+        color: $primary;
+    }
+}
+
+.main-desc {
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: 100;
+    color: $gray-600;
+    padding-left: 45px;
+    position: relative;
+    width: 50%;
+    margin-top: 50px;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 3px;
+        height: 100%;
+        background: $primary;
+        border-radius: 20px;
+        left: 0;
+    }
+}
+
+.banner-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    margin-top: 100px;
+}
+
+.btn {
+    &-label {
+        font-size: 29px;
+        line-height: 44px;
+        color: $dark;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+
+    &-primary {
+
+        &-filled,
+        &-border {
+            padding: 30px 51px;
+            font-weight: 700;
+            font-size: 26px;
+            line-height: 33px;
+            border-radius: 10px;
+            transition: .5s ease;
+            border: 3px solid $primary;
+        }
+
+        &-filled {
+            background: $primary;
+            color: $white;
+
+            &:hover {
+                background: transparent;
+                color: $primary;
+            }
+        }
+
+        &-border {
+            background: transparent;
+            color: $primary;
+
+            &:hover {
+                background: $primary;
+                color: $white;
+            }
+        }
+    }
+}
+
+.img-box {
+    width: 650px;
+    height: 700px;
+    background: $gray-400;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.currency {
+    &-wrap {
+        padding: 65px 78px;
+        width: 100%;
+        border-radius: 25px;
+        background: $white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-text {
+        width: 100%;
+
+        h3 {
+            float: right;
+            font-size: 46px;
+            line-height: 67px;
+            color: $gray-600;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            width: 65%;
+            text-align: left;
+            font-weight: 300;
+        }
+    }
+
+    &-banner {
+        margin-top: 165px;
+        align-items: center;
+    }
+}

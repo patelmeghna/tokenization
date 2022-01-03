@@ -45,3 +45,13 @@
         transform: scale(2.5);
     }
 }
+
+@keyframes navBottom {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 20%;
+    }
+}

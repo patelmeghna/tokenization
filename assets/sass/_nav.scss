@@ -1,0 +1,81 @@
+.navbar {
+    padding: 33px 165px;
+    background: $white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    &-item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+    }
+
+    &-link {
+        font-size: 22px;
+        line-height: 24px;
+        color: $dark;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: none;
+            height: 3px;
+            width: 0px;
+            background: $primary;
+            border-radius: 10px;
+            bottom: -15px;
+            left: 45%;
+            border: 1px solid $primary;
+            transition: width .3s ease-in-out;
+        }
+
+        &.active {
+            &::after {
+                content: '';
+                width: 20%;
+            }
+        }
+
+        &:hover {
+            color: $dark;
+
+            &::after {
+                content: '';
+                width: 20%;
+                animation: navBottom 0.5s infinite;
+                animation-iteration-count: 1;
+            }
+        }
+    }
+}
+
+.user-account {
+    padding: 10px;
+    background: rgba($color: $primary, $alpha: 0.05);
+    border-radius: 10px;
+    transition: .3s ease;
+
+    a {
+        svg {
+            path {
+                transition: .3s ease;
+            }
+        }
+    }
+
+    &:hover {
+        background: $primary;
+
+        a {
+            svg {
+                path {
+                    stroke: $white;
+                }
+            }
+        }
+    }
+}
